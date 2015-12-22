@@ -1,29 +1,33 @@
-This should be the most easy way to get a setup of the SYMPHONY library for solving MIP.
+This should be the most easy way to get a setup of the SYMPHONY library for solving mixed-integer-programs.
 
-## install docker
-
+## install prerequisites
 ```
+# get docker
 sudo apt-get install docker.io
+# get plain ubuntu image
 sudo docker pull ubuntu
 ```
 
-## install
-
-just type
-
+## install Symphony
 ```
-./build.sh
-```
-
-to build the docker container. And 
-
-```
-./run.sh
+# get this repository
+git clone https://github.com/PatWie/symphony-docker.git
+# go into the new directory
+cd symphony-docker
+# create a docker-image from the provided Dockerfile (tagged as "symphony")
+sudo docker build -t symphony image/
 ```
 
-to run the docker file.
-A direct access to the interactive interpreter can be used inside the docker file using
+Now, you can run the library. Currently, this Dockerfile just provides the default interactive shell by typing
+```
+sudo docker run -it symphony
+```
+Inside the docker file the Symphony-interpreter can be run by:
 
 ```
 /var/symphony/bin/symphony
 ```
+
+
+
+
