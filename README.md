@@ -83,7 +83,7 @@ From the terminal clone the repository and build the docker image by the
 commands
 
 ```
-git clone https://github.com/PatWie/optimization-suite-docker.git
+git clone https://github.com/PatWie/optimization-suite-docker
 cd optimization-suite-docker
 docker build -t optimization-suite image/
 ```
@@ -133,7 +133,7 @@ eval "$(docker-machine env default)"
 Now follow instructions as above for building the container
 
 ```
-git clone https://github.com/tkralphs/optimization-suite-docker.git
+git clone https://github.com/tkralphs/optimization-suite-docker
 cd optimization-suite-docker/
 docker build -t optimization-suite image/
 ```
