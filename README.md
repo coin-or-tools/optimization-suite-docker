@@ -3,7 +3,7 @@ installed version of the [COIN-OR Optimization
 Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
 
 A [preliminary version](https://github.com/PatWie/symphony-docker) of this
-image was written by [Patrick Wieschollek](http://wieschollek.info/), Thanks,
+image was written by [Patrick Wieschollek](http://wieschollek.info/). Thanks,
 Patrick!
 
 # Install and Use From Docker Hub
@@ -65,7 +65,7 @@ sudo docker build -t optimization-suite image/
 Now follow the instructions for running a solver from above, but note that all
 commands will have to be executed with `sudo`.
 
-## Windows
+## Linux
 
 First install Docker for Windows. Depending on whether you are using a recent
 version of Windows, you may need to enable virtualization in the BIOS
