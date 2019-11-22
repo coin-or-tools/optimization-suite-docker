@@ -2,9 +2,11 @@ FROM ubuntu:latest
 MAINTAINER Ted Ralphs <ted@lehigh.edu>
 
 RUN apt-get update
-RUN apt-get -y install git subversion gcc g++ make wget gfortran
+RUN apt-get -y install --no-install-recommends git subversion gcc g++ make wget gfortran patch pkg-config file
+RUN apt-get -y install --no-install-recommends libblas-dev liblapack-dev
+RUN apt-get -y install --no-install-recommends ca-certificates
 
-RUN cd /var
-RUN svn checkout --non-interactive --trust-server-cert https://projects.coin-or.org/svn/CoinBinary/OptimizationSuite/stable/1.8 /var/coin-or
-RUN cd /var/coin-or && ./get.AllThirdParty
-RUN cd /var/coin-or && ./configure COIN_SKIP_PROJECTS=FlopCpp --with-gmpl --enable-gnu-packages &&  make -j4 && make install
+RUN git clone https://github.com/coin-or/coinbrew /var/coin-or
+WORKDIR /var/coin-or
+RUN ./coinbrew fetch COIN-OR-OptimizationSuite --skip="ThirdParty/Blas ThirdParty/Lapack" --no-prompt
+RUN ./coinbrew build  COIN-OR-OptimizationSuite  --skip="ThirdParty/Blas ThirdParty/Lapack" --no-prompt --prefix=/usr

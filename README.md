@@ -1,10 +1,5 @@
-This repository contains the source for building a Docker image containing an
-installed version of the [COIN-OR Optimization
-Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
-
-A [preliminary version](https://github.com/PatWie/symphony-docker) of this
-image was written by [Patrick Wieschollek](http://wieschollek.info/). Thanks,
-Patrick!
+This is a Docker image containing an installed version of the [COIN-OR
+Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
 
 # Install and Use From Docker Hub
 
@@ -17,34 +12,34 @@ docker pull tkralphs/optimization-suite-docker
 ```
 
 This retrieves a docker image containing the COIN-OR Optimization Suite. Once
-yu have the image, you can create a container, which is a running version of
+you have the image, you can create a container, which is a running version of
 the image. Note that this container is completely isolated from the OS you are
 working in, so to run any useful commands inside it, you need to first copy
 the files in to the container, then copy the results back out. To do this,
 first create and start a container, as follows:
 
 ```
-docker create --name=os -it tkralphs/optimization-suite-docker
-docker start os
+docker create --name=coin-or -it tkralphs/optimization-suite-docker
+docker start coin-or
 ```
 
 Now copy in any files you need:
 
 ```
-docker cp example.mps os:/tmp
+docker cp example.mps coin-or:/tmp
 ```
 
 Here, we are copying into the `/tmp` directory inside the container. Finally,
 execute a solver command.
 
 ```
-docker /var/optimization-suite/bin/symphony -F /tmp/example.mps > /tmp/output
+docker /var/coin-or/bin/cbc /tmp/example.mps > /tmp/output
 ```
 
 and finally, copy the output back out
 
 ```
-docker cp os:/tmp/output .
+docker cp coin-or:/tmp/output .
 ```
 
 Note that you are as root by default inside the container, but this is not
@@ -52,7 +47,7 @@ much of a risk inside a docker container, since it can be recreated easily.
 
 # Build from Source
 
-## Ubuntu
+## Linux
 
 Just clone the repository and build the docker image by
 
@@ -65,7 +60,7 @@ sudo docker build -t optimization-suite image/
 Now follow the instructions for running a solver from above, but note that all
 commands will have to be executed with `sudo`.
 
-## Linux
+## Windows
 
 First install Docker for Windows. Depending on whether you are using a recent
 version of Windows, you may need to enable virtualization in the BIOS
