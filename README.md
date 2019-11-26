@@ -4,11 +4,11 @@ Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
 # Install and Use From Docker Hub
 
 This image is now on [Docker
-Hub](https://hub.docker.com/r/tkralphs/optimization-suite-docker/). To use,
+Hub](https://hub.docker.com/r/tkralphs/coinor-optimization-suite/). To use,
 simply install Docker (see instructions below) and then do
 
 ```
-docker pull tkralphs/optimization-suite-docker
+docker pull tkralphs/coinor-optimization-suite
 ```
 
 This retrieves a docker image containing the COIN-OR Optimization Suite. Once
@@ -19,7 +19,7 @@ the files in to the container, then copy the results back out. To do this,
 first create and start a container, as follows:
 
 ```
-docker create --name=coin-or -it tkralphs/optimization-suite-docker
+docker create --name=coin-or -it tkralphs/coinor-optimization-suite
 docker start coin-or
 ```
 
@@ -54,7 +54,7 @@ Just clone the repository and build the docker image by
 ```
 git clone https://github.com/tkralphs/optimization-suite-docker
 cd optimization-suite-docker
-sudo docker build -t optimization-suite image/
+sudo docker build -t coin-or image/
 ```
 
 Now follow the instructions for running a solver from above, but note that all
@@ -62,25 +62,14 @@ commands will have to be executed with `sudo`.
 
 ## Windows
 
-First install Docker for Windows. Depending on whether you are using a recent
-version of Windows, you may need to enable virtualization in the BIOS
-settings. For details, see
-
-https://docs.docker.com/engine/installation/windows
-
-As of this writing, it's important that you let Docker install Git for Windows
-(do not uncheck the box for installing git in the installer, even though it
-indicates that it is optional). After installing, run the "Docker Quickstart
-Terminal" application. Make a note of the IP address assigned to the docker
-machine (something like 192.168.99.100).
-
-From the terminal clone the repository and build the docker image by the
-commands
+First install Docker Desktop for Windows (in older versions of Windows without
+built-in virtualization, the instructions my be different). From a Powershell
+terminal, clone the repository and build the docker image by the commands
 
 ```
 git clone https://github.com/PatWie/optimization-suite-docker
 cd optimization-suite-docker
-docker build -t optimization-suite image/
+docker build -t coin-or image/
 ```
 
 Finally, follow the instructions for running a solver from above.
