@@ -4,7 +4,7 @@ Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
 # Install and Use From Docker Hub
 
 This image is now on [Docker
-Hub](https://hub.docker.com/r/tkralphs/coinor-optimization-suite/). To use,
+Hub](https://hub.docker.com/r/coinor/coin-or-optimization-suite/). To use,
 simply install Docker (see instructions below) and then do
 
 ```
@@ -19,7 +19,7 @@ the files in to the container, then copy the results back out. To do this,
 first create and start a container, as follows:
 
 ```
-docker create --name=coin-or -it tkralphs/coinor-optimization-suite
+docker create --name=coin-or -it coinor/coin-or-optimization-suite
 docker start coin-or
 ```
 
@@ -52,7 +52,7 @@ much of a risk inside a docker container, since it can be recreated easily.
 Just clone the repository and build the docker image by
 
 ```
-git clone https://github.com/tkralphs/optimization-suite-docker
+git clone https://github.com/coin-or-tools/optimization-suite-docker
 cd optimization-suite-docker
 sudo docker build -t coin-or image/
 ```
@@ -67,7 +67,7 @@ built-in virtualization, the instructions my be different). From a Powershell
 terminal, clone the repository and build the docker image by the commands
 
 ```
-git clone https://github.com/PatWie/optimization-suite-docker
+git clone https://github.com/coin-or-tools/optimization-suite-docker
 cd optimization-suite-docker
 docker build -t coin-or image/
 ```
@@ -117,7 +117,7 @@ eval "$(docker-machine env default)"
 Now follow instructions as above for building the container
 
 ```
-git clone https://github.com/tkralphs/optimization-suite-docker
+git clone https://github.com/coin-or-tools/optimization-suite-docker
 cd optimization-suite-docker/
 docker build -t optimization-suite image/
 ```
