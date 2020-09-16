@@ -8,7 +8,7 @@ Hub](https://hub.docker.com/r/coinor/coin-or-optimization-suite/). To use,
 simply install Docker (see instructions below) and then do
 
 ```
-docker pull tkralphs/coinor-optimization-suite
+docker pull coinor/coinor-optimization-suite
 ```
 
 This retrieves a docker image containing the COIN-OR Optimization Suite. Once
