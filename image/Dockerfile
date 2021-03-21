@@ -1,6 +1,8 @@
-FROM ubuntu:xenial
+FROM ubuntu:latest
 MAINTAINER Ted Ralphs <ted@lehigh.edu>
 
+ARG DEBIAN_FRONTEND="noninteractive"
+ENV TZ="America/New_York"
 RUN apt-get update
 RUN apt-get -y install --no-install-recommends git subversion gcc g++ make wget gfortran patch pkg-config file
 RUN apt-get -y install --no-install-recommends libgfortran-5-dev libblas-dev liblapack-dev libmetis-dev libnauty2-dev
