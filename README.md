@@ -33,7 +33,7 @@ Here, we are copying into the `/tmp` directory inside the container. Finally,
 execute a solver command.
 
 ```
-docker /var/coin-or/bin/cbc /tmp/example.mps > /tmp/output
+docker /usr/bin/cbc /tmp/example.mps > /tmp/output
 ```
 
 and finally, copy the output back out
