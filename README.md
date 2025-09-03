@@ -4,7 +4,7 @@ Optimization Suite](https://github.com/coin-or/COIN-OR-OptimizationSuite).
 # Install and Use From Docker Hub
 
 This image is now on [Docker
-Hub](https://hub.docker.com/r/coinor/coin-or-optimization-suite/). To use,
+Hub](https://hub.docker.com/r/coinor). To use,
 simply install Docker (see instructions below) and then do
 
 ```
